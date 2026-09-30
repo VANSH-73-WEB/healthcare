@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-mist text-ink font-sans antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: "Sora", ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: #cceee7;
+  color: #0b1524;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-teal-600;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5
+      text-sm font-semibold text-white shadow-card transition-all duration-200
+      hover:bg-brand-600 hover:-translate-y-0.5 active:translate-y-0
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-ink/10 bg-white px-6 py-3.5
+      text-sm font-semibold text-ink transition-all duration-200
+      hover:border-brand-300 hover:text-brand-600 hover:-translate-y-0.5 active:translate-y-0
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2;
+  }
+
+  .btn-emergency {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-alert-500 px-6 py-3.5
+      text-sm font-semibold text-white shadow-card transition-all duration-200
+      hover:bg-alert-600 hover:-translate-y-0.5 active:translate-y-0
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-alert-500 focus-visible:ring-offset-2;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-ink/5 bg-white shadow-soft;
+  }
+}
